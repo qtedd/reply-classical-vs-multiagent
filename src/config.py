@@ -5,11 +5,16 @@ BASE_DIR = Path(__file__).resolve().parent
 IO_DIR = BASE_DIR / "io"
 IO_DIR.mkdir(parents=True, exist_ok=True)
 
+PREPROCESS_DIR = IO_DIR / 'preprocessing'
+PREPROCESS_DIR.mkdir(parents=True, exist_ok=True)
+
 #Datasets
 CASES_DATA = IO_DIR / 'ALLARMI.csv'
-PASSENGERS_DATA= IO_DIR / 'TIPOLOGIA_VIAGGIATORE.csv'
+PASSENGERS_DATA = IO_DIR / 'TIPOLOGIA_VIAGGIATORE.csv'
 
 #Output
+CASES_CLEAN_OUT = PREPROCESS_DIR / 'cases_clean.csv'
+PASSENGERS_CLEAN_OUT = PREPROCESS_DIR / 'passenger_clean.csv'
 
 
 #Translation of columns
@@ -47,17 +52,17 @@ GENDER_MAPPING = {
 
 COLUMN_MAPPING_CASES = {
     'OCCORRENZE': 'event_type',
-    'AREOPORTO_ARRIVO': 'arrival_airport',
-    'AREOPORTO_PARTENZA': 'departure_airport',
+    'AREOPORTO_ARRIVO': 'arrival_airport_code',
+    'AREOPORTO_PARTENZA': 'departure_airport_code',
     'DATA_PARTENZA': 'departure_date',
     'DESCR_AEREOPORTO_ARR': 'arrival_airport_name',
     'DESCR_AEREOPORTO_PART': 'departure_airport_name',
-    'CITTA_ARR': 'arrival_city',
-    'CITTA_PARTENZA': 'departure_city',
+    'CITTA_ARR': 'arrival_city_name',
+    'CITTA_PARTENZA': 'departure_city_name',
     'CODICE PAESE ARR': 'arrival_country_code',
     'CODICE_PAESE_PART': 'departure_country_code',
     'MOTIVO_ALLARME': 'alarm_reason',
-    'paese%arr' : 'arrival_country',
+    'paese%arr' : 'arrival_country_name',
     'Paese Partenza': 'departure_country_name',
     'tot voli': 'total_flights',
     '3zona': 'region_zone'

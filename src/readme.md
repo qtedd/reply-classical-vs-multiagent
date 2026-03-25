@@ -20,9 +20,12 @@ In 'AREOPORTO_ARRIVO' and 'AREOPORTO_PARTENZA', some of codes were lower cased w
 'DATA_PARTENZA' follows the same pattern as Passenger dataset.<br>
 The dataset contains 50 duplicated rows. All are dropped.<br>
 'OCCORRENZE' contains placeholders like ???, N/C, and Altro. They are replaced with UNKNOWN.<br>
-Conditional Filling was used for 'DESCR_AEROPORTO_PART'. If the description is missing or inconsistent, it ise filled it with the Airport Code.<br>
+Conditional Filling was used for 'DESCR_AEREOPORTO_PART'. If the description is missing or inconsistent, it ise filled it with the Airport Code.<br>
 'CITTA_PARTENZA' includes missing rows. Missing rows were replaced with their country.<br>
 'CODICE_PAESE_PART' includes unstandard and inconsistent rows. All rows are uppercased and missing values are saved as 'UNKNOWN' and later on will be filled by looking at 'PAESE PARTENZA'<br>
 All columns are translated to English<br>
 'region_zone' has some logical issues (a country can't be in multiple zones like Regno Unito). Zones were redefined by the most frequent values.<br>
 
+### Creating Tables
+
+The main strategy is to have one route-date-nationality-document type in each row. Why? because by this table we can analyze traffic volume, risk by nationality, by document type, by route and by context from the cases.
