@@ -388,7 +388,6 @@ state["anomaly_results"]
 state["risk_profile"]
 ```
 
-** The Report Agent depends on the quality of the previous agents' outputs. ** 
-If the anomaly detection or risk profiling steps contain errors, the final report may also reflect those errors. <br>
-The Report Agent does not independently verify the detected anomalies. It only explains the structured results that it receives from the previous agents.
+* The Report Agent depends on the quality of the previous agents' outputs.
+If the anomaly detection or risk profiling steps contain errors, the final report may also reflect those errors.
 ---
